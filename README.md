@@ -4,17 +4,18 @@
  <a href="https://ixsystems.atlassian.net/browse/NAS/"><img alt="File Issue" src="https://badgen.net/badge/Jira/File%20Issue//red?icon=jira" /></a>
 </p>
 
-TrueNAS WebUI
+TrueNAS WebUI 日本語翻訳方法用のブランチ
 ================
-Angular-based WebUI for TrueNAS.
+AngularベースのTrueNAS用WebUI。
+このブランチは WebUI の日本語化ではなく、日本語化に取り組むためのドキュメント自体の日本語化用。WebUI の日本語化は Master ブランチ。
 
-### Participate In The Project
-- :earth_africa: [Translate UI in your language.](https://github.com/truenas/webui/blob/master/docs/contributing_translations.md)
-- :mage: [Contribute code.](https://github.com/truenas/webui/blob/master/docs/contributing_code.md)
+### プロジェクトに参加する
+- :earth_africa: [UIをあなたの言語に翻訳する](https://github.com/ReiKirishima/webui/blob/Japanese-Translation/docs/contributing_translations.md)
+- :mage: [コードで貢献する](https://github.com/ReiKirishima/webui/blob/Japanese-Translation/docs/contributing_code.md)
 
-### Set up Development Environment
-- :toolbox: [Set up local environment.](https://github.com/truenas/webui/blob/master/docs/setup.md)
+### 開発環境のセットアップ
+- :toolbox: [ローカル環境のセットアップ](https://github.com/ReiKirishima/webui/blob/Japanese-Translation/docs/setup.md)
 
-### Test Specific UI Version
-- :test_tube: Learn [How To Run WebUI In a Docker Container.](https://github.com/truenas/webui/blob/master/docs/testing_ui.md)
+### 特定のUIバージョンのテスト
+- :test_tube: Learn [WebUIをDockerコンテナで実行する方法](https://github.com/ReiKirishima/webui/blob/Japanese-Translation/docs/testing_ui.md)
 

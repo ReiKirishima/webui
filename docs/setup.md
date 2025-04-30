@@ -1,46 +1,46 @@
-# Setting Up Development Environment
+# 開発環境のセットアップ
 
-## Requirements
+## 必要条件
 
 - yarn >= 1.22
 - Node.js >= 18.19.1
-- Running instance with TrueNAS nightly (VM is fine).
+- 実行中のTrueNASナイトリーのインスタンス（VMでもいいです）。
 
 > [!TIP]
-> `master` branch usually corresponds to TrueNAS nightly, but you _may_ be able to run master WebUI on non-master TrueNAS instance, if it's relatively new.
+> `master`ブランチは通常TrueNASのナイトリーに対応しますが、比較的新しいTrueNASインスタンスであれば、masterでないTrueNASインスタンスでもmaster WebUIを実行できる場合があります。
 
-## Getting The Code
-- Clone WebUI repo:
+## コードの取得
+- WebUI repoをクローンする：
 
 ```sh
-$ git clone <url of webui repo or your fork>
+$ git clone <webui リポジトリまたはあなたのフォークの url>
 $ cd webui
 ```
 
-- Install packages:
+- パッケージをインストールする：
 
 ```sh
 $ yarn
 ```
 
-- Create an environment file and point it to your TrueNAS instance:
+- 環境ファイルを作成し、TrueNAS インスタンスを指定します：
 
 ```sh
-$ yarn ui remote -i <ip address or hostname of the server where TrueNAS is running>
+$ yarn ui remote -i <TrueNAS が稼働しているサーバーの IP アドレスまたはホスト名>
 ```
 
 > [!TIP]
-> If there is something wrong with your environment file, you can reset it with `yarn ui reset` and then execute `yarn ui remote -i ` again.
+> 環境ファイルに何か問題がある場合は、`yarn ui reset` で環境ファイルを再設定し、再度 `yarn ui remote -i ` を実行してください。
 
-## Starting the Application
+## アプリケーションの実行
 
-- Start WebUI in development mode:
+- WebUIを開発モードで起動します：
 
 ```sh
 yarn start
 ```
 
-- Open WebUI in your browser. By default, it's on http://localhost:4200.
+- ブラウザでWebUIを開く。デフォルトでは、http://localhost:4200。
 
 
 

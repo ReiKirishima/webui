@@ -1,19 +1,19 @@
-# Testing Specific UI Version
+# 特定の UI バージョンのテスト
 
-Latest version of TrueNAS WebUI and every PR is also available for testing in form of a docker image.
+TrueNAS WebUI の最新バージョンと各 PR は、Docker イメージの形でテストすることもできます。
 
-You still need to have a running TrueNAS instance to point UI to.
+UI を指すには、実行中の TrueNAS インスタンスが必要です。
 
-For example:
+例:
 
 ```sh
-$ docker container run -it -e TNIP=<TrueNAS IP or hostname> -p 8080:80 ixsystems/truenas-webui:latest
+$ docker container run -it -e TNIP=<TrueNASのIPまたはホスト名> -p 8080:80 ixsystems/truenas-webui:latest
 ```
 
-This would allow you to access the running WebUI on http://localhost:8080
+こうすると、http://localhost:8080 で実行中のWebUIでアクセスすることができます。
 
-To test a pull request this way, replacee `:latest` with the pull-request ID.
+この方法でプルリクエストをテストするには、`:latest`をプルリクエストIDに置き換えてください。
 
 ```sh
-$ docker container run -it -e TNIP=<TrueNAS IP or hostname> -p 8080:80 ixsystems/truenas-webui:5167
+$ docker container run -it -e TNIP=<TrueNASのIPまたはホスト名> -p 8080:80 ixsystems/truenas-webui:5167
 ```

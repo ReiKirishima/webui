@@ -1,76 +1,75 @@
-# Contributing Code
+# コードで貢献する
 
-TrueNAS is an open-source project, and we welcome contributions from the community.\
-Our code is licensed under GPL-3 license.
+TrueNASはオープンソースのプロジェクトであり、コミュニティからの貢献を歓迎します。\
+私たちのコードはGPL-3ライセンスの下でライセンスされています。
 
-We've created this document to explain how to contribute to the project.
+プロジェクトに貢献する方法を説明するためにこの文書を作成しました。
 
-## How To Contribute
+## 貢献の方法
 
-### Select An Issue
+### 課題の選択
 
-We maintain a [Help Wanted list](https://ixsystems.atlassian.net/issues/?filter=12107) – a list of tasks that are easier to get started with.
+私たちは、 [Help Wanted list](https://ixsystems.atlassian.net/issues/?filter=12107) （ヘルプ募集リスト）という、より簡単に始められる仕事のリストを管理しています。
 
-- Pick an issue from the [Help Wanted list.](https://ixsystems.atlassian.net/issues/?filter=12107)
-- Assign it to yourself, so that no one else works on it. 
+- [Help Wanted list.](https://ixsystems.atlassian.net/issues/?filter=12107)から課題を選んでください。
+- 他の誰も作業しないように、自分自身に課題を割り当ててください。
 
-Feel free to assign any one issue from the queue, regardless of current assignee.
+現在の担当者に関係なく、キューから自由に課題を割り当ててください。
 
-> [!NOTE]
-> If you have discovered a new bug in TrueNAS, it's still best to create a Jira ticket first before attempting to fix it.
+> [!注意]
+> TrueNAS に新しいバグを発見した場合も、修正を試みる前にまず Jira チケットを作成することをお勧めします。
 
-### Update The code
-- Fork the repo.
+### コードを更新する
+- リポジトリをフォークする。
 
-- Set up development environment by following the [Setup Guide.](https://github.com/truenas/webui/blob/master/docs/setup.md)
+- [Setup Guide](https://github.com/ReiKirishima/webui/blob/Japanese-Translation/docs/setup.md)（セットアップガイド）に従って、開発環境をセットアップする。
 
-- Fix the issue.
+- 課題を解決してください。
 
-### Add Tests If Necessary
+### 必要に応じてテストを追加する
 
-If you are fixing a small styling issue, adding test may not be necessary. 
+小さなスタイルの問題を修正するのであれば、テストを追加する必要はないかもしれません。
 
-However, for a bigger change, adding or updating test may be required.\
-We have a minimum coverage requirement that is automatically enforced by our CI.
+しかし、大きな変更になると、テストの追加や更新が必要になることがあります。\
+私たちは、CIによって自動的に実施される最低保障要件を設けています。
 
-A good rule of thumb is to cover all happy paths in the code you are changing.
+良い経験則は、変更するコード内のすべてのハッピーパスをカバーすることです。
 
-It's inadvisable to run all tests locally, as it takes too much time.\
-As an alternative you can:
+すべてのテストをローカルで実行するのは、時間がかかりすぎるので望ましくありません。\
+別の方法として、次のようなこともできます。：
 
-- Run a specific test suite using your IDE or via `yarn test <src/app/path to the test file>`.
-- Run tests in folders that have changes using `yarn test:changed`.
+-  IDE を使って特定のテストスイートを実行するか、`yarn test <src/app/path to the test file>` を使って実行します。
+- `yarn test:changed` を使って、変更があったフォルダ内のテストを実行する。
 
-Please see other `.spec.ts` files in the repo for examples.
+例については、リポジトリの他の `.spec.ts` ファイルを参照してください。
 
-> [!NOTE]
-> If you have trouble writing tests, create a PR without them and we'll help.
+> [!注意]
+> もしテストを書くのに問題がある場合は、テストなしでPRを作成してください。
 
-### Open The PR
+### PRを開く
 
-Our CI will make sure that your code matches our code style, but it may be a good idea to run linter locally first:
+私たちのCIはあなたのコードが私たちのコードスタイルに合っていることを確認しますが、まずローカルでlinterを実行するのがよいかもしれません:
 
 - `yarn lint`
 
-- Please name your branch `NAS-<issue number>`, e.g. `NAS-12345`.
+- あなたのブランチに`NAS-<課題番号>`という名前をつけてください、例えば`NAS-12345`です。
 
-- Commit description should be in the format `NAS-<issue number>: <description>`, e.g. `NAS-12345: Fix the issue with ...`.
+- コミットの説明は `NAS-<issue number>： <説明> 例えば `NAS-12345: Fix the issue with ...`
 
-- Push changes to your fork.
+- 変更をフォークにプッシュしてください。
 
-- Open a PR against our repo.
+- 私たちのリポジトリに対して PR をオープンしてください。
 
-### Wait For Changes To Be Merged
+### 変更がマージされるのを待つ
 
-After you open a PR, a member of the UI team will be automatically asked to review it.
+PR をオープンすると、UI チームのメンバーが自動的にその PR をレビューするように求められます。
 
-Once your PR is merged, it will appear in the next nightly build. :tada:
+PRがマージされると、次のナイトリービルドに反映されます：ジャーン：
 
-We appreciate your contribution.
+あなたの貢献に感謝します。
 
-### Get [Forum](https://forums.truenas.com) Contributor Credit!
+### [Forum](https://forums.truenas.com) コントリビューターのクレジットを取得します！
 
-Once you have successfully had your pull-request merged into the TrueNAS repository, you are eligible for an exclusive forum badge and group to highlight your contributor status!
+あなたのプルリクエストが TrueNAS リポジトリにマージされると、あなたの貢献者ステータスを強調するために、専用のフォーラムバッジとグループを受け取る資格があります！
 
-To claim your contributor badge, please include a `TrueNAS Forums Username: <name>` on your pull request description. Once the pull request merges, message the forum moderators with a link to the PR and your will be granted membership to the contributors group.
-
+貢献者バッジを申請するには、プルリクエストに `TrueNAS フォーラム ユーザー名： <name>` をプルリクエストの説明文に記載してください。プルリクエストがマージされたら、フォーラムのモデレーターにPRへのリンクを添えてメッセージを送ってください。

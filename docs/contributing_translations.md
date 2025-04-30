@@ -1,116 +1,120 @@
-# Translating TrueNAS UI
+# TrueNAS UI を翻訳する
 
 ## TL;DR
 
-:point_right: Translate files in `src/assets/i18n` and submit a PR.
+:point_right: `src/assets/i18n` 内にあるファイルを翻訳してプルリクを送信してください。
+日本語は
+src/assets/i18n/ja.json
 
-## Details
+## 詳細
 
-All JSON files for translating TrueNAS UI are located in [src/assets/i18n](https://github.com/truenas/webui/tree/master/src/assets/i18n). \
-These files can be edited using your editor of choice or directly on GitHub.
+TrueNAS UI を翻訳するための JSON ファイルはすべて [src/assets/i18n](https://github.com/truenas/webui/tree/master/src/assets/i18n)にあります。 \
+これらのファイルは、お好みのエディタを使って編集するか、GitHub上で直接編集することができます。
 
-Translation needs to be added to the right part of the string. For example:
+翻訳は文字列の右側に追加する必要があります。例えば:
 
 ```
 "1 day": "",
 ```
 
-becomes
+は
 
 ```
-"1 day": "1 jour",
+"1 day": "1 日",
 ```
 
-## Branches
+となります。
 
-Different branches correspond to different versions of TrueNAS.
+## ブランチ
 
-To keep things simple, we suggest you make changes to the `master` branch.\
-After your PR is merged, changes will appear in the next nightly.
+異なるブランチは異なるバージョンの TrueNAS に対応しています。
 
-## Tips
+物事をシンプルにするために、`master` ブランチに変更を加えることをお勧めします。\
+あなたの PR がマージされた後、変更は次のナイトリーに表示されます。
 
-- Source files often change, so to avoid conflicts it's better to make multiple smaller PRs instead of trying to translate everything at once.
-- CI job will validate your changes and will fail if there are any issues.
-- If you want to validate translation strings locally, you need to have Node.js and `yarn` installed, do `yarn install` and execute `yarn validate-translations` in the root of the project.
+## コツ
 
-## Placeholder Tokens
+- ソースファイルはしばしば変更されるので、衝突を避けるためには、一度にすべてを翻訳しようとするのではなく、複数の小さなPRを作成する方がよいでしょう。
+- CIジョブはあなたの変更を検証し、問題があれば失敗する。
+- 翻訳文字列をローカルで検証したい場合は、Node.jsと`yarn`をインストールし、`yarn install`を行い、プロジェクトのルートで`yarn validate-translations`を実行する必要がある。
 
-Some strings may contain placeholder tokens in `{curly braces}`.
+## プレースホルダ トークン
 
-For example:
+文字列の中には、プレースホルダトークン `{curly braces}` が使われています。
+
+例えば:
 
 ```
 "Delete {file}?": "",
 ```
 
-In the UI `{file}` will be replaced with the name of the file, resulting in a string like `"Delete myfile.txt?"`.
+UIでは`{file}`はファイル名に置き換えられ、`"Delete myfile.txt?"`のような文字列になります。
 
-You should keep these tokens as is in the translated string, but you can move them around if needed.
+これらのトークンは翻訳された文字列の中にそのまま残しておくべきですが、必要に応じて移動させることもできます。
 
 ```
-"Delete {file}?": "Supprimer {file}?",
+"Delete {file}?": "{file}を削除しますか？",
 ```
 
-## Plural Forms
+## 複数形
 
-Some strings may use [ICU Message Format](https://formatjs.io/docs/core-concepts/icu-syntax/#plural-format) for pluralization.
+文字列によっては[ICU Message Format](https://formatjs.io/docs/core-concepts/icu-syntax/#plural-format)を使って複数形にすることができます。
 
-For example,
+例えば、
 
 ```
 {n, plural, one {User} other {# users}} deleted
 ```
 
-may show either `User deleted` or `5 users deleted` depending on the value of `n`.
+は `n` の値によって `User deleted` または `5 users deleted` のどちらかを表示します。
 
-Everything inside the curly braces is a part of the ICU Message Format.
+中括弧の中はすべてICUメッセージフォーマットの一部です。
 
-This particular example can be read as:
+この例は次のように読めます：
 
-1. Look at the value of `n`.
-2. If `n` is `one`, print `User`.
-3. If `n` is anything else, print `# users`, where `#` is replaced with the value of `n`.
-4. Add `deleted` at the end.
+1. `n`の値を見てください。
+2. `n` が `one` なら `User` と表示する。
+3. もし `n` がそれ以外の値なら、 `# users` と表示する。
+4. 最後に `deleted` を追加する。
 
-## Plural Forms In Different Languages
+## さまざまな言語における複数形
 
-Different languages have different ways of expressing plural forms.
+言語によって複数形の表現方法は異なります。
 
-In English plurality is expressed by changing the form of the noun: `User -> users`.
+英語では複数形は名詞の形を変えることで表現されます：`User -> users`。
 
-In Spanish, both noun and verb may change: `Usuario eliminado -> Usuarios eliminados`.
+スペイン語では、名詞と動詞の両方が変化することがあります：`Usuario eliminado -> Usuarios eliminados`。
 
-You can express it in the following way:
+次のように表現できます：
 
 ```
 {n, plural, one {Usuario eliminado} other {# usuarios eliminados}}
 ```
 
-If your language has the same form of the word regadless of whether it's singular or plural, you can just replace the right part with a single form:
+もしあなたの言語が、単数形か複数形かに関係なく同じ形の単語を持っているなら、適切な部分を単一の形に置き換えればいいです：
 
 ```
 "({n, plural, =1 {# widget} other {# widgets}})": "({n} 个小部件)",
 ```
 
-Russian is an example of a language that has even more complicated plural forms. 
+ロシア語はさらに複雑な複数形を持つ言語の一例です。
 
-In Russian, the word for `user` has three different forms depending on the number of users:
+ロシア語では、「ユーザー」という単語は、ユーザーの数によって3つの異なる形があります：
 
 - `1` (one) - `пользователь`
 - `2, 3, 4` (few) - `пользователя`
 - `5, 6, 7, 8, 9, 0` (other) - `пользователей`
 
-This can be expressed via:
+これは次のように表現することができます：
 
 ```
 {n, plural, =1 {Пользователь удален} few{# пользователя удалено} other {# пользователей удалено}}
 ```
 
-You would have to research ICU Message Format for your language to find out how to express plural forms.
+複数形をどのように表現するかは、その言語のICUメッセージ・フォーマットを調べる必要があります。
 
-It's also helpful to test plural strings in an [online editor](http://format-message.github.io/icu-message-format-for-translators/editor.html).
+[オンラインエディター](http://format-message.github.io/icu-message-format-for-translators/editor.html)で複数形の文字列をテストするのも役に立つでしょう。
 
-## Contributing Code
-By the way, we also welcome code contributions.\
-[Learn how to contribute.](https://github.com/truenas/webui/blob/master/docs/contributing_code.md)
+## コードで貢献する
+ちなみに、コードの投稿も歓迎します。\
+[貢献する方法を学ぶ](https://github.com/ReiKirishima/webui/blob/Japanese-Translation/docs/contributing_code.md)
