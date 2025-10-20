@@ -1,8 +1,12 @@
 {
   "0": "0",
   "": "",
+  "Blocked due to outbound network restrictions": "",
   "Cannot be enabled without a valid home path and login shell.": "",
+  "Invalid Rclone bandwidth limit: {value}": "",
+  "Password cannot be disabled when SMB access is enabled. SMB authentication requires a password.": "",
   "Password must be reset in order to enable SMB authentication": "",
+  "The following disks will be deleted:": "",
   "We are working in the background to generate relevant data. Please try again in a few minutes.": "",
   "\n              It looks like your session has been inactive for more than {lifetime} seconds.<br>\n              For security reasons we will log you out at {time}.\n            ": "\n              Похоже, что ваш сеанс был неактивен более {lifetime} секунд.<br>\n              По соображениям безопасности мы выйдем из системы в любое время.\n",
   " as of {dateTime}": " в {dateTime}",
