@@ -1,6 +1,7 @@
 {
   "0": "0",
   "Debug information could not be attached to the ticket: {error}": "",
+  "Number of password-based key derivation function 2 (PBKDF2) iterations to use for reducing vulnerability to brute-force attacks. Entering a number of at least <i>1300000</i> is required. See <a href=\"https://en.wikipedia.org/wiki/PBKDF2\" target=\"_blank\">PBKDF2</a> for more details.": "",
   " as of {dateTime}": " {dateTime} 現在",
   " bytes.": "バイト。",
   " Est. Usable Raw Capacity": "推定の使用可能な生容量",
@@ -1538,7 +1539,6 @@
   "Delete zvol {name}": "zvol {name} の削除",
   "Delete zvol device": "zvol デバイスの削除",
   "Deleted {n, plural, one {# snapshot} other {# snapshots} }": "{n} 個のスナップショットを削除",
-  "Deleting exporter": "エクスポーターを削除",
   "Deleting interfaces while HA is enabled is not allowed.": "HAが有効になっている間は、インターフェースの削除はできません。",
   "Deleting...": "削除中...",
   "Deny": "拒否",
@@ -3575,7 +3575,6 @@
   "Number of days to retain local audit messages.": "ローカル監査メッセージを保持する日数。",
   "Number of objects that can be owned by each of the selected groups. Entering <code>0</code> (zero) allows unlimited objects.": "選択した各グループが所有できるオブジェクトの数。 <code>0</code>（ゼロ）を入力すると、無制限にオブジェクトを所有できます。",
   "Number of objects that can be owned by each of the selected users. Entering <code>0</code> (zero) allows unlimited objects.": "選択した各ユーザーが所有できるオブジェクトの数。 <code>0</code>（ゼロ）を入力すると、無制限にオブジェクトを所有できます。",
-  "Number of password-based key derivation function 2 (PBKDF2) iterations to use for reducing vulnerability to brute-force attacks. Entering a number larger than <i>100000</i> is required. See <a href=\"https://en.wikipedia.org/wiki/PBKDF2\" target=\"_blank\">PBKDF2</a> for more details.": "ブルートフォース攻撃に対する脆弱性を軽減するために使用する、パスワードベースの鍵導出関数2（PBKDF2）の反復回数。 <i>100000</i> より大きい数を入力する必要があります。詳細は <a href=\"https://en.wikipedia.org/wiki/PBKDF2\" target=\"_blank\">PBKDF2</a> を参照。",
   "Number of previous passwords to remember. Must be between 1 and 10.": "過去に使用したパスワードを記憶する数。1から10の間でなければなりません。",
   "Number of retries for failed replications": "レプリケーション失敗時の再試行回数",
   "Number of seconds to wait after a network failure before triggering a failover. <i>0</i> means a failover occurs immediately, or after two seconds when the system is using a link aggregation.": "ネットワーク障害発生後、フェイルオーバーをトリガーするまでの待機秒数。 <i>0</i> はフェイルオーバーが即座に発生することを意味し、システムがリンクアグリゲーションを使用している場合は2秒後に発生します。",
